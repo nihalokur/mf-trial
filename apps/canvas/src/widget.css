@@ -1,0 +1,2 @@
+.canvas-widget { min-width: 0; }
+.canvas-widget > .ant-alert { border-radius: 12px; }

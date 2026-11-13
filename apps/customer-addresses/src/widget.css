@@ -1,0 +1,9 @@
+.standalone-widget { max-width: 720px; margin: 48px auto; padding: 0 20px; }
+.address-card__name { display: flex; align-items: center; gap: 7px; }
+.address-card__name .anticon { color: #315efb; }
+.address-tags { display: flex; gap: 4px; }
+.address-tags .ant-tag { margin-inline-end: 0; font-size: 9px; }
+.address-footer { margin-top: 12px; padding-top: 13px; display: flex; justify-content: space-between; color: #8a95a5; border-top: 1px solid #f0f2f6; font-size: 10px; }
+@media (max-width: 640px) {
+  .standalone-widget { margin: 18px auto; padding: 0 10px; }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "canvas-microfrontends",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n canvas,customers,orders,addresses -c cyan,green,yellow,magenta \"npm run dev -w @canvas/canvas\" \"npm run dev -w @canvas/customers\" \"npm run dev -w @canvas/orders\" \"npm run dev -w @canvas/customer-addresses\"",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "mock:init": "msw init apps/canvas/public --save && msw init apps/customers/public --save && msw init apps/orders/public --save && msw init apps/customer-addresses/public --save"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^6.0.0",
+    "antd": "^5.27.0",
+    "dayjs": "^1.11.13",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@module-federation/vite": "^1.1.2",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "concurrently": "^9.2.1",
+    "msw": "^2.11.2",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.4"
+  },
+  "msw": {
+    "workerDirectory": [
+      "apps/canvas/public",
+      "apps/customers/public",
+      "apps/orders/public",
+      "apps/customer-addresses/public"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@canvas/shared",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.tsx",
+    "./styles.css": "./src/styles.css"
+  },
+  "dependencies": {
+    "@canvas/event-bus": "*",
+    "@ant-design/icons": "^6.0.0",
+    "antd": "^5.27.0",
+    "dayjs": "^1.11.13",
+    "react": "^19.1.1"
+  }
+}
