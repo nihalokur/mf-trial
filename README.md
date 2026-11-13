@@ -7,9 +7,9 @@ standalone Vite app with its own mock-service-worker startup.
 ## Run locally
 
 ```sh
-npm install
-npm run mock:init
-npm run dev
+pnpm install
+pnpm run mock:init
+pnpm dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173). The root dev command starts:
@@ -21,9 +21,9 @@ Open [http://localhost:5173](http://localhost:5173). The root dev command starts
 | Orders | `http://localhost:3002` | `http://localhost:3002/remoteEntry.js` |
 | Customer addresses | `http://localhost:3003` | `http://localhost:3003/remoteEntry.js` |
 
-Run an individual widget by using `npm run dev -w @canvas/customers`,
-`npm run dev -w @canvas/orders`, or
-`npm run dev -w @canvas/customer-addresses`.
+Run an individual widget with `pnpm --filter @canvas/customers dev`,
+`pnpm --filter @canvas/orders dev`, or
+`pnpm --filter @canvas/customer-addresses dev`.
 
 ## Structure
 
@@ -39,6 +39,6 @@ Run an individual widget by using `npm run dev -w @canvas/customers`,
 Widgets refresh their own data and can independently collapse or expand. The
 customer selection event updates the orders and address widgets. In development,
 the mock API is enabled in each app by `mockServiceWorker.js`; the mock worker
-script is generated into each app's `public` directory by `npm run mock:init`.
+script is generated into each app's `public` directory by `pnpm run mock:init`.
 
-Use `npm run typecheck` and `npm run build` to validate all workspace apps.
+Use `pnpm typecheck` and `pnpm build` to validate all workspace apps.
