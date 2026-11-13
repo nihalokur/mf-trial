@@ -1,14 +1,15 @@
 {
   "name": "canvas-microfrontends",
   "private": true,
+  "packageManager": "pnpm@12.18.0",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "scripts": {
-    "dev": "concurrently -k -n canvas,customers,orders,addresses -c cyan,green,yellow,magenta \"npm run dev -w @canvas/canvas\" \"npm run dev -w @canvas/customers\" \"npm run dev -w @canvas/orders\" \"npm run dev -w @canvas/customer-addresses\"",
-    "build": "npm run build --workspaces --if-present",
-    "typecheck": "npm run typecheck --workspaces --if-present",
+    "dev": "concurrently -k -n canvas,customers,orders,addresses -c cyan,green,yellow,magenta \"pnpm --filter @canvas/canvas dev\" \"pnpm --filter @canvas/customers dev\" \"pnpm --filter @canvas/orders dev\" \"pnpm --filter @canvas/customer-addresses dev\"",
+    "build": "pnpm -r --if-present build",
+    "typecheck": "pnpm -r --if-present typecheck",
     "mock:init": "msw init apps/canvas/public --save && msw init apps/customers/public --save && msw init apps/orders/public --save && msw init apps/customer-addresses/public --save"
   },
   "dependencies": {

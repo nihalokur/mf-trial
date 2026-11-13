@@ -9,9 +9,9 @@
     "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "@canvas/event-bus": "*",
-    "@canvas/mock-api": "*",
-    "@canvas/shared": "*",
+    "@canvas/event-bus": "workspace:*",
+    "@canvas/mock-api": "workspace:*",
+    "@canvas/shared": "workspace:*",
     "@module-federation/vite": "^1.1.2",
     "@vitejs/plugin-react": "^5.0.2",
     "antd": "^5.27.0",
